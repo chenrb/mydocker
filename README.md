@@ -83,4 +83,4 @@ docker run -p 80:80 -p 443:443 --name nginx --network bridge --privileged=true -
 ```markdown
 docker run -p 8000:8000 --name share --network bridge --privileged=true --env-file /data/code/env -v /data/code/share:/data/code/share -v/data/code/logs/:/data/code/logs/ -it -d share
 ```
-docker run -d -p 15672:15672 -p 5672:5672 -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=qwer1q2w3e4r5t --name rabbitmq --network bridge rabbitmq:management
+docker run -d -p 15672:15672 -p 5672:5672 --env-file /data/rabbitmq/env --name rabbitmq --network bridge rabbitmq:management
